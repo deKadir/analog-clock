@@ -12,7 +12,6 @@ setInterval(() => {
   const secondDeg = second * 6;
   const minuteDeg = (minute + second / 60) * 6;
   const hourDeg = (hour + minute / 60) * 15;
-  console.log(hourDeg);
   setTransform(bigHand, secondDeg);
   setTransform(secondHand, minuteDeg);
   setTransform(smallHand, hourDeg);
