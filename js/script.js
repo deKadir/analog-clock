@@ -9,10 +9,15 @@ setInterval(() => {
     date.getMinutes(),
     date.getSeconds(),
   ];
-  const secondDeg = second * 6 - 90;
-  const minuteDeg = (minute + second / 60) * 6 - 90;
-  const hourDeg = (hour + minute / 60) * 15 - 90;
-  bigHand.style.transform = `rotate(${secondDeg}deg)`;
-  secondHand.style.transform = `rotate(${minuteDeg}deg)`;
-  smallHand.style.transform = `rotate(${hourDeg}deg)`;
+  const secondDeg = second * 6;
+  const minuteDeg = (minute + second / 60) * 6;
+  const hourDeg = (hour + minute / 60) * 15;
+  console.log(hourDeg);
+  setTransform(bigHand, secondDeg);
+  setTransform(secondHand, minuteDeg);
+  setTransform(smallHand, hourDeg);
 }, 1000);
+
+function setTransform(element, value) {
+  element.style.transform = `rotate(${value - 90}deg)`;
+}
