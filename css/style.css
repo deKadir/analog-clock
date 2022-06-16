@@ -1,0 +1,50 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.container {
+  background-color: lightblue;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clock {
+  width: 600px;
+  aspect-ratio: 1;
+  border: 1rem solid white;
+  border-radius: 50%;
+  position: relative;
+}
+#big-hand,
+#small-hand,
+#second-hand {
+  position: absolute;
+  inset: 0;
+  width: 5px;
+  height: 5px;
+  margin: auto;
+}
+
+#big-hand::before,
+#second-hand::before,
+#small-hand::before {
+  content: '';
+  position: absolute;
+  height: 5px;
+}
+#big-hand::before {
+  width: 295px;
+  background-color: red;
+}
+
+#second-hand::before {
+  width: 260px;
+  background-color: black;
+}
+#small-hand::before {
+  width: 200px;
+  background-color: black;
+}
